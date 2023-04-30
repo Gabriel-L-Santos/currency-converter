@@ -1,18 +1,62 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Link Favicon -->
-    <link rel="icon" type="image/favicon" href="#">
-    <!-- Link CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <!-- Link FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>Currency Converter</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Link Favicon -->
+        <link rel="icon" type="image/favicon" href="#">
+        <!-- Link CSS -->
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <!-- Link FontAwesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <!-- Link Javascript -->
+        <script src="./assets/js/country-list.js" defer></script>
+        <script src="./assets/js/script.js" defer></script>
+
+        <title>Currency Today</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>Currency Today</header>
+            <form action="#">
+                <div class="amount">
+                    <p>Enter amount</p>
+                    <input type="text" value="1">
+                </div>
+                <div class="drop-list">
+                    <div class="from">
+                        <p>From</p>
+                        <div class="select-box">
+                            <img src="https://flagsapi.com/PT/flat/64.png" alt="flag">
+                            <select>
+                                <option value="EUR">EUR</option>
+                                <option value="USD">USD</option>
+                                <option value="NPR">NPR</option>
+                                <option value="INR">INR</option>
+                                <option value="PKR">PKR</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="icon"><i class="fas fa-exchange-alt"></i></div>
+                    <div class="to">
+                        <p>To</p>
+                        <div class="select-box">
+                            <img src="https://flagsapi.com/US/flat/64.png" alt="flag">
+                            <select>
+                                <option value="EUR">USD</option>
+                                <option value="USD">EUR</option>
+                                <option value="NPR">NPR</option>
+                                <option value="INR">INR</option>
+                                <option value="PKR">PKR</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="exchange-rate">1 EUR = 1.11 USD</div>
+                <button>Get Exchange Rate</button>
+            </form>
+        </div>
+    </body>
 </html>
