@@ -19,16 +19,43 @@ for (let i = 0; i < dropList.length; i++) {
         // inserting options tag inside select tag
         dropList[i].insertAdjacentHTML("beforeend", optionTag);
     }
+    dropList[i].addEventListener("change", e =>{
+        loadFlag(e.target); // Calling loadFlag with passing target element as an argument
+    });
 }
+
+function loadFlag(element){
+    for(code in country_code){
+        if(code == element.value){ //if currency code of country list is equal to option value
+            let imgTag = element.parentElement.querySelector("img"); // Selecting img tag of particular drop list
+            // Passing country code of a selected currency code in a img url
+            imgTag.src = `https://flagsapi.com/${country_code[code]}/flat/64.png`
+        }
+    }
+}
+
+window.addEventListener("load", () =>{
+    getExchangeRate();
+});
 
 getButton.addEventListener("click", e =>{
     e.preventDefault(); //preventing form from submitting
     getExchangeRate();
 });
 
+const exchangeIcon = document.querySelector(".drop-list .icon");
+exchangeIcon.addEventListener("click", ()=>{
+    let tempCode = fromCurrency.value; // Temporary currency code of FROM drop list
+    fromCurrency.value = toCurrency.value; // Passing TO currency code to FROM currency code
+    toCurrency.value = tempCode; // Passing temprary currency code to TO currency code
+    loadFlag(fromCurrency); // calling loadFlag with passing select element (fromCurrency) ofFROM
+    loadFlag(toCurrency); // calling loadFlag with passing select element (toCurrency) of TO
+    getExchangeRate();
+});
+
 function getExchangeRate(){
-    const amount = document.querySelector(".amount input");
-    const exchangeRateTxt = document.querySelector(".exchange-rate");
+    const amount = document.querySelector(".amount input"),
+    exchangeRateTxt = document.querySelector(".exchange-rate");
     let amountVal = amount.value;
     // if user don't enter any value or enter 0 then we'll put 1 value by default in the input field
     if(amountVal == "" || amountVal == "0"){
@@ -42,5 +69,8 @@ function getExchangeRate(){
         let exchangeRate = result.conversion_rates[toCurrency.value];
         let totalExchangeRate = (amountVal * exchangeRate).toFixed(2);
         exchangeRateTxt.innerText = `${amountVal} ${fromCurrency.value} = ${totalExchangeRate} ${toCurrency.value}`;
+        // if user is offline or other error occured while fecting data then catch function will run
+    }).catch(() =>{
+        exchangeRateTxt.innerText = "Something went wrong";
     })
 }
