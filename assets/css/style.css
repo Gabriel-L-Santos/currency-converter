@@ -46,13 +46,14 @@ form :where(input, select, button){
 form p {
     font-size: 18px;
     margin-bottom: 5px;
+    text-align: center;
 }
 
 form input {
     height: 50px;
     font-size: 17px;
     padding: 0 15px;
-    border: 1px solid #999;
+    border: 1px solid transparent;
 }
 
 form input:focus {
@@ -74,7 +75,7 @@ form .drop-list {
     border-radius: 5px;
     align-items: center;
     justify-content: center;
-    border: 1px solid #999;
+    border: 1px solid transparent;
 }
 
 .select-box select {
