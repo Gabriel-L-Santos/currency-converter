@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Staatliches', cursive;
 }
 
 body {
@@ -12,14 +12,17 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: #675AFE;
+    background: #094fe6 url("background.jpg") no-repeat fixed;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
 }
 
 .wrapper {
     width: 370px;
     padding: 30px;
     border-radius: 7px;
-    background: #fff;
+    background: #1e71dda4;
 }
 
 .wrapper header {
@@ -37,6 +40,7 @@ form :where(input, select, button){
     outline: none;
     border: none;
     border-radius: 5px;
+    background: rgba(239, 239, 243, 0.274);
 }
 
 form p {
@@ -53,7 +57,7 @@ form input {
 
 form input:focus {
     padding: 0 14px;
-    border: 2px solid #675AFE;
+    border: 2px solid #1e71dd7a;
 }
 
 form .drop-list {
@@ -104,8 +108,9 @@ form .drop-list {
 }
 
 form .exchange-rate {
-    font-size: 17px;
+    font-size: 30px;
     margin: 20px 0 30px;
+    text-align: center;
 }
 
 form button {
@@ -113,5 +118,12 @@ form button {
     color: #fff;
     font-size: 17px;
     cursor: pointer;
-    background: #675AFE;
+    background: #09a2dfda;
+    transition: 0.4s;
+}
+
+form button:hover {
+    color: #07b9ff;
+    background: rgba(239, 239, 243, 0.274);
+    transform: scale(0.95);
 }
