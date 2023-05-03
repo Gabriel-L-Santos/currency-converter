@@ -71,6 +71,6 @@ function getExchangeRate(){
         exchangeRateTxt.innerText = `${amountVal} ${fromCurrency.value} = ${totalExchangeRate} ${toCurrency.value}`;
         // if user is offline or other error occured while fecting data then catch function will run
     }).catch(() =>{
-        exchangeRateTxt.innerText = "Something went wrong";
+        exchangeRateTxt.innerText = "Error";
     })
 }

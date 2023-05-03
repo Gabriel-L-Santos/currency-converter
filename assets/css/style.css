@@ -1,16 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Staatliches', cursive;
+    font-family: 'Roboto Slab', serif;
 }
 
 body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     min-height: 100vh;
     background: #094fe6 url("background.jpg") no-repeat fixed;
     background-size: cover;
@@ -20,7 +21,7 @@ body {
 
 .wrapper {
     width: 370px;
-    padding: 30px;
+    padding: 2rem;
     border-radius: 7px;
     background: #1e71dda4;
 }
@@ -32,7 +33,7 @@ body {
 }
 
 .wrapper form {
-    margin: 40px 0 20px 0;
+    margin: 2.5rem 0 1.3rem 0;
 }
 
 form :where(input, select, button){
@@ -52,7 +53,7 @@ form p {
 form input {
     height: 50px;
     font-size: 17px;
-    padding: 0 15px;
+    padding: 0 1rem;
     border: 1px solid transparent;
 }
 
@@ -63,7 +64,7 @@ form input:focus {
 
 form .drop-list {
     display: flex;
-    margin-top: 20px;
+    margin-top: 1.3rem;
     align-items: center;
     justify-content: space-between;
 }
@@ -81,7 +82,13 @@ form .drop-list {
 .select-box select {
     width: auto;
     font-size: 16px;
-    margin: 0 -5px 0 5px;
+    margin-left: 5px;
+    text-align: center;
+}
+
+.select-box select:hover {
+    opacity: 0.8;
+    cursor: pointer;
 }
 
 .select-box select::-webkit-scrollbar{
@@ -99,18 +106,23 @@ form .drop-list {
 }
 
 .select-box img {
-    max-width: 25px;
+    max-width: 30%;
+    border-radius: 15px;
 }
 
 .drop-list .icon {
-    cursor: pointer;
     font-size: 22px;
-    margin-top: 30px;
+    margin-top: 1.9rem;
+}
+
+.drop-list .icon:hover {
+    opacity: 0.8;
+    cursor: pointer;
 }
 
 form .exchange-rate {
     font-size: 30px;
-    margin: 20px 0 30px;
+    margin: 1.3rem 0 1.9rem;
     text-align: center;
 }
 
